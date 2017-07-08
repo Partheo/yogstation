@@ -1,51 +1,51 @@
 macro "default"
 	elem 
-		name = "TAB"
+		name = "Tab"
 		command = ".winset \"mainwindow.macro=hotkeys mapwindow.map.focus=true input.background-color=#e0e0e0\""
 	elem 
-		name = "CENTER+REP"
+		name = "Center+REP"
 		command = ".center"
 	elem 
-		name = "NORTHEAST"
+		name = "Northeast"
 		command = ".northeast"
 	elem 
-		name = "SOUTHEAST"
+		name = "Southeast"
 		command = ".southeast"
 	elem 
-		name = "SOUTHWEST"
+		name = "Southwest"
 		command = ".southwest"
 	elem 
-		name = "NORTHWEST"
+		name = "Northwest"
 		command = ".northwest"
 	elem 
-		name = "CTRL+WEST"
+		name = "CTRL+West"
 		command = "westface"
 	elem 
-		name = "WEST+REP"
+		name = "West+REP"
 		command = ".moveleft"
 	elem 
-		name = "CTRL+NORTH"
+		name = "CTRL+North"
 		command = "northface"
 	elem 
-		name = "NORTH+REP"
+		name = "North+REP"
 		command = ".moveup"
 	elem 
-		name = "CTRL+EAST"
+		name = "CTRL+East"
 		command = "eastface"
 	elem 
-		name = "EAST+REP"
+		name = "East+REP"
 		command = ".moveright"
 	elem 
-		name = "CTRL+SOUTH"
+		name = "CTRL+South"
 		command = "southface"
 	elem 
-		name = "SOUTH+REP"
+		name = "South+REP"
 		command = ".movedown"
 	elem 
-		name = "INSERT"
+		name = "Insert"
 		command = "a-intent right"
 	elem 
-		name = "DELETE"
+		name = "Delete"
 		command = "delete-key-pressed"
 	elem 
 		name = "CTRL+1"
@@ -77,6 +77,9 @@ macro "default"
 	elem 
 		name = "CTRL+G"
 		command = "a-intent right"
+	elem 
+		name = "CTRL+O"
+		command = "ooc"
 	elem 
 		name = "CTRL+Q"
 		command = ".northwest"
@@ -113,9 +116,6 @@ macro "default"
 	elem 
 		name = "F5"
 		command = "Aghost"
-	elem 
-		name = "CTRL+O"
-		command = "ooc"
 	elem 
 		name = "F6"
 		command = "Player-Panel"
@@ -270,7 +270,7 @@ macro "hotkeys"
 		command = ".movedown"
 	elem 
 		name = "T"
-		command = "say"
+		command = "say_key"
 	elem "w_key"
 		name = "W+REP"
 		command = ".moveup"
@@ -325,12 +325,6 @@ macro "hotkeys"
 	elem 
 		name = "F12"
 		command = "F12"
-	elem "asay"
-		name = ","
-		command = "asay"
-	elem "dsay"
-		name = "."
-		command = "dsay"
 
 macro "robot-default"
 	elem 
@@ -723,10 +717,11 @@ menu "menu"
 window "mainwindow"
 	elem "mainwindow"
 		type = MAIN
-		pos = 0,0
-		size = 640x440
+		pos = 387,58
+		size = 640x459
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-default = true
 		saved-params = "pos;size;is-minimized;is-maximized"
 		icon = 'icons\\ss13_64.png'
@@ -735,16 +730,17 @@ window "mainwindow"
 	elem "split"
 		type = CHILD
 		pos = 3,0
-		size = 634x417
+		size = 634x436
 		anchor1 = 0,0
 		anchor2 = 100,100
+		background-color = none
 		saved-params = "splitter"
 		left = "mapwindow"
 		right = "infowindow"
 		is-vert = true
 	elem "input"
 		type = INPUT
-		pos = 5,420
+		pos = 5,439
 		size = 595x20
 		anchor1 = 0,100
 		anchor2 = 100,100
@@ -754,10 +750,11 @@ window "mainwindow"
 		saved-params = "command"
 	elem "say"
 		type = BUTTON
-		pos = 600,420
+		pos = 600,439
 		size = 37x20
 		anchor1 = 100,100
 		anchor2 = none
+		background-color = none
 		saved-params = "is-checked"
 		text = "Chat"
 		command = ".winset \"say.is-checked=true ? input.command=\"!say \\\"\" : input.command=\""
@@ -769,14 +766,16 @@ window "mainwindow"
 		size = 200x200
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 	elem "tooltip"
 		type = BROWSER
-		pos = 0,0
-		size = 999x999
+		pos = -264,-152
+		size = 999x840
 		anchor1 = none
 		anchor2 = none
+		background-color = none
 		is-visible = false
 		saved-params = ""
 
